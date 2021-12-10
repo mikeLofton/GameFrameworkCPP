@@ -79,7 +79,7 @@ public:
 
     Component* addComponent(Component* component);
     bool removeComponent(Component* component);
-    bool removeComponent(const char* component);
+    bool removeComponentName(const char* componentName);
     Component* getComponent(const char* component);
 
 protected:

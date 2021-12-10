@@ -31,6 +31,65 @@ void Actor::onCollision(Actor* other)
 {
 }
 
+Component* Actor::addComponent(Component* component)
+{
+    //Create a new array thats one size larger than the original
+    Component** tempArray = new Component * [m_componentCount + 1];
+
+    //Copy all values from the original array into the temp array
+    for (int i = 0; i < m_componentCount; i++)
+    {
+        tempArray[i] = m_comp[i];
+    }
+
+    //Add the new component to the end of the array
+    tempArray[m_componentCount] = component;
+
+    //Set the old array to be the new array
+    m_comp = tempArray;
+
+    //Increment component count
+    m_componentCount++;
+
+    return component;
+}
+
+bool Actor::removeComponent(Component* component)
+{
+    //Check to see if the component is null
+    if (!component)
+    {
+        return false;
+    }
+
+    bool actorRemoved = false;
+    //Create a new array with a size one less than our old array
+    Actor** newArray = new Actor * [m_componentCount - 1];
+    //Create variable to access tempArray index
+    int j = 0;
+    //Copy values from the old array to the new array
+    for (int i = 0; i < m_componentCount; i++)
+    {
+        if (actor != m_actors[i])
+        {
+            newArray[j] = m_actors[i];
+            j++;
+        }
+        else
+        {
+            actorRemoved = true;
+        }
+    }
+    //Set the old array to the new array
+    if (actorRemoved)
+    {
+        m_actors = newArray;
+        m_actorCount--;
+    }
+    //Return whether or not the removal was successful
+    return actorRemoved;
+}
+
 void Actor::update(float deltaTime)
 {
 }
