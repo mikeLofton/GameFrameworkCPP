@@ -32,4 +32,6 @@ void Sprite::draw()
 
 	position = position - (forward * getWidth() / 2);
 	position = position - (up * getHeight() / 2);
+
+	RAYLIB_H::Vector2 rayPos = { position.x, position.y };
 }
