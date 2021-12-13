@@ -55,6 +55,11 @@ Component* Actor::addComponent(Component* component)
     //Add the new component to the end of the array
     tempArray[m_componentCount] = component;
 
+    if (m_componentCount > 1)
+        delete[] m_components;
+    else if (m_componentCount == 1)
+        delete m_components;
+
     //Set the old array to be the new array
     m_components = tempArray;
 
@@ -92,12 +97,13 @@ bool Actor::removeComponent(Component* component)
     //Set the old array to the new array
     if (compRemoved)
     {
+        delete[] m_components;
         m_components = newArray;
         m_componentCount--;
         delete component;
     }
-
-    delete[] newArray;
+    else 
+        delete[] newArray;
 
     //Return whether or not the removal was successful
     return compRemoved;
@@ -133,12 +139,13 @@ bool Actor::removeComponent(const char* componentName)
     //Set the old array to the new array
     if (compRemoved)
     {
+        delete[] m_components;
         m_components = newArray;
         m_componentCount--;
         delete componentToDelete;
     }
-
-    delete[] newArray;
+    else
+        delete[] newArray;
 
     //Return whether or not the removal was successful
     return compRemoved;

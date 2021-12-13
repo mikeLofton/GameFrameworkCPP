@@ -9,9 +9,6 @@
       <UniqueIdentifier>{93995380-89BD-4b04-88EB-625FBE52EBFB}</UniqueIdentifier>
       <Extensions>h;hh;hpp;hxx;hm;inl;inc;ipp;xsd</Extensions>
     </Filter>
-    <Filter Include="Source Files\Images">
-      <UniqueIdentifier>{862cf9af-fe0e-468b-9089-95c93659fe3e}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Components">
       <UniqueIdentifier>{eeecc675-2a1b-4eee-8d9c-0a4754c29279}</UniqueIdentifier>
     </Filter>
@@ -47,9 +44,6 @@
     <ClCompile Include="Player.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="InputComponent.cpp">
-      <Filter>Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="Component.cpp">
       <Filter>Components</Filter>
     </ClCompile>
@@ -57,6 +51,12 @@
       <Filter>Components</Filter>
     </ClCompile>
     <ClCompile Include="Sprite.cpp">
+      <Filter>Components</Filter>
+    </ClCompile>
+    <ClCompile Include="StartScene.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="InputComponent.cpp">
       <Filter>Components</Filter>
     </ClCompile>
   </ItemGroup>
@@ -88,9 +88,6 @@
     <ClInclude Include="Player.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="InputComponent.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="MovementComponent.h">
       <Filter>Components</Filter>
     </ClInclude>
@@ -100,16 +97,11 @@
     <ClInclude Include="Sprite.h">
       <Filter>Components</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <Image Include="..\..\..\..\..\Downloads\Images\Images\enemy.png">
-      <Filter>Source Files\Images</Filter>
-    </Image>
-    <Image Include="..\..\..\..\..\Downloads\Images\Images\bullet.png">
-      <Filter>Source Files\Images</Filter>
-    </Image>
-    <Image Include="..\..\..\..\..\Downloads\Images\Images\player.png">
-      <Filter>Source Files\Images</Filter>
-    </Image>
+    <ClInclude Include="StartScene.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="InputComponent.h">
+      <Filter>Components</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
