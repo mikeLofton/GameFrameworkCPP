@@ -3,16 +3,19 @@
 Component::Component()
 {
 	m_owner = nullptr;
-	m_name = "\0";
+	m_name = nullptr;
+	m_started = false;
 }
 
-Component::Component(Actor* owner, const char* name)
+void Component::assignOwner(Actor* owner)
 {
+	if (getOwner())
+		return;
+
 	m_owner = owner;
-	m_name = name;
 }
 
-Component::~Component()
+Component::Component(const char* name)
 {
-
+	m_name = name;
 }
