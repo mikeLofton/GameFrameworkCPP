@@ -62,32 +62,32 @@ bool Actor::removeComponent(Component* component)
         return false;
     }
 
-    bool actorRemoved = false;
+    bool compRemoved = false;
     //Create a new array with a size one less than our old array
-    Actor** newArray = new Actor * [m_componentCount - 1];
+    Component** newArray = new Component * [m_componentCount - 1];
     //Create variable to access tempArray index
     int j = 0;
     //Copy values from the old array to the new array
     for (int i = 0; i < m_componentCount; i++)
     {
-        if (actor != m_actors[i])
+        if (component != m_comp[i])
         {
-            newArray[j] = m_actors[i];
+            newArray[j] = m_comp[i];
             j++;
         }
         else
         {
-            actorRemoved = true;
+            compRemoved = true;
         }
     }
     //Set the old array to the new array
-    if (actorRemoved)
+    if (compRemoved)
     {
-        m_actors = newArray;
-        m_actorCount--;
+        m_comp = newArray;
+        m_componentCount--;
     }
     //Return whether or not the removal was successful
-    return actorRemoved;
+    return compRemoved;
 }
 
 void Actor::update(float deltaTime)
